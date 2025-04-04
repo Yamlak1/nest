@@ -140,16 +140,16 @@ export class TransactionsService {
         .createHmac('sha256', secret)
         .update(JSON.stringify(body))
         .digest('hex');
-      // const chapaSignature = headers['chapa-signature'];
-      // const xChapaSignature = headers['x-chapa-signature'];
+      const chapaSignature = headers['chapa-signature'];
+      const xChapaSignature = headers['x-chapa-signature'];
 
-      // const isValidChapaSignature =
-      //   (chapaSignature && computedHash === chapaSignature) ||
-      //   (xChapaSignature && computedHash === xChapaSignature);
+      const isValidChapaSignature =
+        (chapaSignature && computedHash === chapaSignature) ||
+        (xChapaSignature && computedHash === xChapaSignature);
 
-      // if (!isValidChapaSignature) {
-      //   throw new BadRequestException('Invalid Chapa signature');
-      // }
+      if (!isValidChapaSignature) {
+        throw new BadRequestException('Invalid Chapa signature');
+      }
 
       const { tx_ref } = body;
       if (!tx_ref) {
