@@ -180,7 +180,7 @@ export class TransactionsService {
         const transaction = await this.transactionRepository.findOne({
           where: { tx_ref },
         });
-
+        console.log(transaction);
         if (!transaction) {
           throw new BadRequestException('Transaction not found');
         }
