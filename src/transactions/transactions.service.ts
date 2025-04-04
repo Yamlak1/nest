@@ -282,7 +282,7 @@ export class TransactionsService {
           email,
           account_name,
           phone_number: normalizedPhone,
-          tx_ref,
+          reference: tx_ref,
           account_number,
           bank_code,
         },
