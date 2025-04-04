@@ -119,6 +119,7 @@ export class TransactionsService {
           },
         },
       );
+      console.log('111111111111111111');
 
       // Update the transaction record with the payment URL
       savedTransaction.payment_url = chapaResponse.data.data.checkout_url;
@@ -132,6 +133,8 @@ export class TransactionsService {
   }
 
   async verifyDeposit(body: any, headers: any): Promise<any> {
+    console.log('222222222222222222222222');
+    console.log(body);
     try {
       const secret = '55a8f9a0a3b6ad0bc3f91bf64a57694b52aca5eb';
 
