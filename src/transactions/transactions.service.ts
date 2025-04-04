@@ -108,8 +108,7 @@ export class TransactionsService {
           phone_number: phone,
           tx_ref,
           payment_method: 'telebirr',
-          callback_url:
-            'https://sports-backend-nest-584017102322.us-central1.run.app/transactions/callback', // Update with your callback URL
+          callback_url: 'https://nest-pvat.onrender.com/transactions/callback', // Update with your callback URL
           return_url:
             'https://sports-frontend-584017102322.us-central1.run.app', // Update with your success URL
         },
